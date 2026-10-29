@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Professional Resume Builder</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <div class="brand">
+          <h1>Professional Resume Builder</h1>
+        </div>
+
+        <div class="top-actions">
+          <button id="themeToggle" class="secondary-btn">Dark Mode</button>
+          <button id="printBtn" class="secondary-btn">Print</button>
+          <button id="savePdfBtn" class="primary-btn">Save as PDF</button>
+        </div>
+      </header>
+
+      <div class="tabs">
+        <button class="tab-btn active" data-target="resumeTab">Resume</button>
+        <button class="tab-btn" data-target="coverTab">Cover Letter</button>
+      </div>
+
+      <div class="content">
+        <aside class="form-panel">
+          <div id="resumeTab" class="tab-content active">
+            <form class="builder-form">
+              <div class="field-group">
+                <label for="profileImage">Profile Photo</label>
+                <input type="file" id="profileImage" accept="image/*" />
+              </div>
+
+              <div class="photo-box">
+                <img id="profilePreview" alt="Profile Preview" />
+              </div>
+
+              <div class="field-group">
+                <label for="fullName">Full Name</label>
+                <input id="fullName" type="text" placeholder="Enter your full name" />
+              </div>
+
+              <div class="field-group">
+                <label for="professionalTitle">Professional Title</label>
+                <input id="professionalTitle" type="text" placeholder="Example: Computer Science Student" />
+              </div>
+
+              <div class="field-group">
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="yourname@email.com" />
+              </div>
+
+              <div class="field-group">
+                <label for="phone">Phone</label>
+                <input id="phone" type="text" placeholder="+1 (555) 123-4567" />
+              </div>
+
+              <div class="field-group">
+                <label for="location">Location</label>
+                <input id="location" type="text" placeholder="City, Country" />
+              </div>
+
+              <div class="field-group">
+                <label for="website">Website / Portfolio</label>
+                <input id="website" type="text" placeholder="yourportfolio.com" />
+              </div>
+
+              <div class="field-group">
+                <label for="summary">Professional Summary</label>
+                <textarea id="summary" placeholder="Write a short summary about yourself and your strengths..."></textarea>
+              </div>
+
+              <div class="field-group">
+                <label for="education">Education</label>
+                <textarea id="education" placeholder="Degree, school, graduation date, coursework..."></textarea>
+              </div>
+
+              <div class="field-group">
+                <label for="experience">Experience</label>
+                <textarea id="experience" placeholder="List internships, work, volunteering, or jobs..."></textarea>
+              </div>
+
+              <div class="field-group">
+                <label for="projects">Projects</label>
+                <textarea id="projects" placeholder="Add your school or personal projects here..."></textarea>
+              </div>
+
+              <div class="field-group">
+                <label for="skills">Skills</label>
+                <textarea id="skills" placeholder="List your technical, academic, and soft skills..."></textarea>
+              </div>
+
+              <div class="field-group">
+                <label for="awards">Certificates / Awards</label>
+                <textarea id="awards" placeholder="Add certificates, achievements, or awards..."></textarea>
+              </div>
+
+              <div class="field-group">
+                <label for="languages">Languages</label>
+                <textarea id="languages" placeholder="English, Hindi, French..."></textarea>
+              </div>
+            </form>
+          </div>
+
+          <div id="coverTab" class="tab-content">
+            <form class="builder-form">
+              <div class="field-group">
+                <label for="coverName">Your Name</label>
+                <input id="coverName" type="text" placeholder="Your full name" />
+              </div>
+
+              <div class="field-group">
+                <label for="coverEmail">Email</label>
+                <input id="coverEmail" type="email" placeholder="you@example.com" />
+              </div>
+
+              <div class="field-group">
+                <label for="coverPhone">Phone</label>
+                <input id="coverPhone" type="text" placeholder="+1 (555) 123-4567" />
+              </div>
+
+              <div class="field-group">
+                <label for="companyName">Company Name</label>
+                <input id="companyName" type="text" placeholder="Company or organization" />
+              </div>
+
+              <div class="field-group">
+                <label for="hiringManager">Hiring Manager</label>
+                <input id="hiringManager" type="text" placeholder="Hiring Manager / Recruitment Team" />
+              </div>
+
+              <div class="field-group">
+                <label for="coverDate">Date</label>
+                <input id="coverDate" type="date" />
+              </div>
+
+              <div class="field-group">
+                <label for="coverGreeting">Greeting</label>
+                <input id="coverGreeting" type="text" placeholder="Dear Hiring Manager," />
+              </div>
+
+              <div class="field-group">
+                <label for="coverBody">Cover Letter Body</label>
+                <textarea id="coverBody" placeholder="Write your cover letter here..."></textarea>
+              </div>
+
+              <div class="field-group">
+                <label for="coverClosing">Closing</label>
+                <input id="coverClosing" type="text" placeholder="Sincerely," />
+              </div>
+            </form>
+          </div>
+        </aside>
+
+        <main class="preview-panel">
+          <div id="resumePreview" class="resume-preview active-preview">
+            <header class="resume-header">
+              <div class="profile-photo-wrap">
+                <img id="resumePhoto" src="" alt="Profile Photo" />
+              </div>
+
+              <div class="header-left">
+                <h2 id="previewFullName">Your Name</h2>
+                <p id="previewProfessionalTitle">Your Profession</p>
+              </div>
+
+              <div class="header-right">
+                <span id="previewEmail">you@example.com</span>
+                <span id="previewPhone">+1 (555) 123-4567</span>
+                <span id="previewLocation">City, Country</span>
+                <span id="previewWebsite">yourportfolio.com</span>
+              </div>
+            </header>
+
+            <section class="resume-section">
+              <h3>Professional Summary</h3>
+              <p id="previewSummary">Add a short summary describing your skills, goals, and strengths.</p>
+            </section>
+
+            <section class="resume-section">
+              <h3>Education</h3>
+              <p id="previewEducation">Add your education details here.</p>
+            </section>
+
+            <section class="resume-section">
+              <h3>Experience</h3>
+              <p id="previewExperience">Add your work or internship experience here.</p>
+            </section>
+
+            <section class="resume-section">
+              <h3>Projects</h3>
+              <p id="previewProjects">Add your main projects here.</p>
+            </section>
+
+            <section class="resume-section">
+              <h3>Skills</h3>
+              <p id="previewSkills">Add your technical and soft skills here.</p>
+            </section>
+
+            <section class="resume-section">
+              <h3>Certificates / Awards</h3>
+              <p id="previewAwards">Add awards or certifications here.</p>
+            </section>
+
+            <section class="resume-section">
+              <h3>Languages</h3>
+              <p id="previewLanguages">Add languages you speak here.</p>
+            </section>
+          </div>
+
+          <div id="coverPreview" class="cover-preview">
+            <div class="cover-header">
+              <h2 id="coverPreviewName">Your Name</h2>
+              <div class="cover-contact">
+                <span id="coverPreviewEmail">you@example.com</span>
+                <span id="coverPreviewPhone">+1 (555) 123-4567</span>
+              </div>
+            </div>
+
+            <div class="cover-company">
+              <p id="coverPreviewCompany">Company Name</p>
+              <p id="coverPreviewManager">Hiring Manager / Recruitment Team</p>
+              <p id="coverPreviewDate">Date</p>
+            </div>
+
+            <div class="cover-body">
+              <p id="coverPreviewGreeting">Dear Hiring Manager,</p>
+              <p id="coverPreviewBody">
+                Write a cover letter explaining why you are interested in the role and what makes you a strong candidate.
+              </p>
+              <p id="coverPreviewClosing">Sincerely,</p>
+              <p id="coverPreviewSignature">Your Name</p>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
